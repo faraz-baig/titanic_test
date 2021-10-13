@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  text-align: center; }
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;}
+
+.wrapper {
+    text-align: center;}
+
+.predict_button {border-radius: 25%;}
+
+h1.a {
+  text-align: center;
+  color: white;}
+  
+</style>
+    <title>Multi-label Emotion Prediction System</title>
+    <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="/static/home/css/style.css">
+
+    <!-- searchbox css -->
+    <link rel="stylesheet" href="/static/type/css/searchbox.css">
+
+    <!-- insertion templates -->
+       
+  	<link rel="stylesheet" href="/static/insertion/css/tooplate-style.css">
+  	<link rel="stylesheet" href="/static/insertion/css/fontawesome-all.min.css"> 
+
+    <!-- Custom CSS -->
+    <link href="/static/lapsus/css/style.css" rel="stylesheet">
+
+
+</head>
+<body 
+<div class="full-height" style="background-image:url(/static/home/images/GUI_Emotion.jpg);">
+  <section class="ftco-cover"  id="section-home">
+    <div class="container">
+      <div class="row align-items-center ftco-vh-100">
+        <div class="col-md-12">
+          <div class="ftco-heading mb-5"><h1 class="a">Titanic Passenger Survival Prediction</h1></div>
+            <div class="grid-container">
+
+              <div class="grid-child left">
+                <h1 style="color:white;">Project Aim</h1>
+                <p>The main purpose of this project is to predict whether a passenger onboard on Titanic Ship, survived or not?</p>
+                <br><p><strong>Input and output</br></p></strong>
+                <p><strong>Input:</strong> Passenger</p>
+                <p><strong>Output:</strong> Prediction (Survived / Not Survived)</p></br>
+                <p><strong>Representation of Input (Passenger)</br></p></strong> 
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Input (Passenger) is Represented as 4 Input Attributes</br></p></strong> 
+                
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input Attributes 01– PClass (Passenger Class)</br></p></strong> 
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 01 – </strong>First Class</p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 02 – </strong>Second Class</p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 03 – </strong>Third Class</p>
+                <br>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input Attributes 02– Gender </br></p></strong> 
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 01 – </strong>Male</p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 02 – </strong>Female</p>
+                <br>                
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input Attributes 03– Siblings</br></p></strong> 
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 01 – </strong>One</p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 02 – </strong>Two</p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 03 – </strong>Three</p>
+                <br>                
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input Attributes 04– Embarked</br></p></strong> 
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 01 – </strong>Cherbourg</p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 02 – </strong>Queenstown</p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 02 – </strong>Southamption</p>                
+                <br>
+                <p><strong>Representation of Output</br></p></strong> 
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Output is Represented as a single Output Attributes</br></p></strong> 
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Output Attribute – Survived </br></p></strong> 
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 01 – </strong>Yes</p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possible Value 02 – </strong>No</p>
+                <br>
+                <p><strong>Example - Input and Output</strong></p>
+                <p><strong>Input (Passenger): </strong></p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;PClass: </strong></p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Class </strong></p>
+
+                
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Gender: </strong></p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Male </strong></p>
+
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Siblings: </strong></p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Two </strong></p>
+            
+            
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Embarked: </strong></p>
+                <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queenstown </strong></p>
+                
+                <p><strong>Output: </strong>Survived</p>
+                <br><br><br>    
+              </div>
+              
+              <div class="grid-child right">
+              <h1 style="color:white;">Input(Passenger)</h1><br>
+                
+                <div class="page" >
+                  <div class="page__demo">   
+                    <form action="{{ url_for('predict')}}" class="search" method="POST">
+                      <div class="a-field search__field">
+                        <div class="dropdown" style="margin-top: -12px;">
+                    <select class="form-control btn-secondary" name="pclass" id="pclass" style="background-color: rgb(0, 0, 0, 0.5);border-width: 3px;border-color: #f0526c;color: white;height: 40px;margin-right:50%;" onchange="checkSelection(this)" required>
+                      <option selected disabled value="">Select PClass</option>
+                      <option value="1">First Class</option>
+                      <option value="2">Second Class</option>
+                      <option value="3">Third Class</option>
+                    </select>
+                </div>
+                <br />
+                <div class="dropdown">
+                    <select class="form-control btn-secondary" name="gender" id="gender" style="background: rgb(0, 0, 0, 0.5);border-width: 3px;border-color: #f0526c;color: white;height: 40px;" onchange="checkSelection(this)" required>
+                      <option selected disabled value="">Select Gender</option>
+                      <option value="1">Male</option>
+                      <option value="0">Female</option>
+                    </select>
+                </div>
+                <br />
+                <div class="dropdown">
+                    <select class="form-control btn-secondary" name="siblings" id="siblings" style="background: rgb(0, 0, 0, 0.5); border-width: 3px; border-color: #f0526c; color: white; height: 40px; " onchange="checkSelection(this)" required >
+                      <option selected disabled value="">
+                        Select Siblings
+                      </option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                 </div>
+                 <br />
+                 <div class="dropdown">
+                    <select class="form-control btn-secondary" name="embarked" id="embarked" style=" border-width: 3px; border-color: #f0526c; color: white; height: 40px; " onchange="checkSelection(this)" required>
+                      <option selected disabled value="">
+                        Select Embarked
+                      </option>
+                      <option value="0">Cherbourg</option>
+                      <option value="1">Queenstown</option>
+                      <option value="2">Southampton</option>
+                    </select>
+                  </div>      
+                        <div class="wrapper">
+                            <button class="predict_button  " style="border:2px solid white; margin-top: 10px; background-color: transparent; color: white;">Predict Passenger</button>
+                        </div>
+                      </div></form>
+                   </div>
+                 </div>
+                <br><br>
+                
+                <p class="h5 ftco-subheading mb-5">
+                <br><strong>PClass - Passenger Class : </strong><i>{{ class11 }}</i>
+                <br><strong>Gender &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </strong><i>{{ gender1 }}</i>
+                <br><strong>Siblings &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </strong><i>{{ siblings1 }}</i>
+                <br><strong>Embarked &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </strong><i>{{ embarked1 }}</i>
+                
+                <br><br><strong>Output &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </strong><i>{{ prediction_text1 }}</i>
+                
+                
+               
+          </div>
+        </div>  
+     </div> 
+   </div> 
+</section>
+
+    <!-- END section -->
+    
+
+
+<div class="footer">
+  <a>Copyrights © 2021 | Ahmad Mahmood, Nazia Jehan, Iqra Ameer, Dr. Rao Muhammad Adeel Nawab | All Rights Reserved</a>
+</div>
+
+  
+</div>
+  </body>
+</html>
