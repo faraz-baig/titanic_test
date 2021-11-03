@@ -1,8 +1,6 @@
-
 from flask import Flask, render_template,request
 import pickle
 import numpy as np
-#from sklearn.ensemble.forest import RandomForestClassifier
 
 app= Flask(__name__)
 
@@ -20,56 +18,51 @@ def predict():
    
    
    inputs = []
-   inputs.append(request.form['pclass'])
-   inputs.append(request.form['gender'])    
-   inputs.append(request.form['siblings'])
-   inputs.append(request.form['embarked'])
+   inputs.append(request.form['sex'])
+   inputs.append(request.form['fbs'])    
+   inputs.append(request.form['exang'])
+   inputs.append(request.form['slope'])
    
-   class1 = request.form['pclass']
-   gender = request.form['gender'] 
-   siblings = request.form['siblings']
-   embarked = request.form['embarked']
+   sex = request.form['sex']
+   fbs = request.form['fbs'] 
+   exang = request.form['exang']
+   slope = request.form['slope']
    
 
    
    
    final_inputs = [np.array(inputs)]
    prediction = svc_model.predict(final_inputs)
-    #unseen_feature_vectors = request.form.values()
    
    if prediction[0] == 1:
-        categorical_array = "Survived"
+        categorical_array = "DISEASED"
    if prediction[0] == 0:
-        categorical_array = "Not Survived"
+        categorical_array = "NOT DISEASED"
     
    result= categorical_array
-   if class1=="1":
-       class1 = "First Class"
-   if class1=="2":
-       class1 = "Second Class"
-   if class1=="3":
-       class1 = "Third Class"
+   if sex=="1":
+       sex = "Male"
+   if sex=="0":
+       sex = "Female"
        
-   if gender=="0":
-       gender = "Female"
-   if gender=="1":
-       gender = "Male"
-     
-   if siblings=="1":
-       siblings = "One"
-   if siblings=="2":
-       siblings = "Two"
-   if siblings=="3":
-       siblings = "Three"
+   if fbs=="0":
+       fbs = "NO"
+   if fbs=="1":
+       fbs = "YES"
+   
+   if exang=="0":
+       exang = "NO"
+   if exang=="1":
+       exang = "YES"  
        
-   if embarked=="0":
-       embarked = "Cherbourg"
-   if embarked=="1":
-       embarked = "Queenstown"
-   if embarked=="2":
-       embarked = "Southampton"
+   if slope=="0":
+       slope = "Upsloping"
+   if slope=="1":
+       slope = "Flat"
+   if slope=="2":
+       slope = "Downsloping"
        
-   return render_template('Home.html', prediction_text1=result, class11 = class1, gender1=gender, siblings1=siblings, embarked1=embarked)
+   return render_template('home.html', prediction_text1=result, sex1 = sex, fbs1=fbs, exang1=exang, slope1=slope)
 
 
 
