@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Heart Disease Prediction System</title>
+  <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="/static/home/css/style.css">
+
+    <!-- searchbox css -->
+    <link rel="stylesheet" href="/static/type/css/searchbox.css">
+
+    <!-- insertion templates -->
+       
+    <link rel="stylesheet" href="/static/insertion/css/tooplate-style.css">
+    <link rel="stylesheet" href="/static/insertion/css/fontawesome-all.min.css"> 
+
+    <!-- Custom CSS -->
+    <link href="/static/lapsus/css/style.css" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/home/css/mystyle2.css">    
+      <link rel = "icon" href="../static/home/images/logo.png" type = "image/x-icon">
+ 
+</head>
+<body  style="
+      background-image: url('../static/home/images/bg.jpg');
+      height: 10vh;
+    ">
+<div class="container-fluid mycontainer">
+  <div class="myCard">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="myLeftCtn">
+          <!-- Login form starts-->
+          <form class="myForm text-center" action="{{ url_for('predict')}}" method="POST">
+            <header>Heart Disease Prediction System</header>
+            <div class="form-group">
+
+              <select class="form-control" name="sex" style="margin-bottom: 10px;" 
+              onchange="checkSelection(this)" required>
+                <option selected disabled value="">SELECT GENDER</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+
+              <select class="form-control" name="fbs" style="margin-bottom: 10px;" 
+              onchange="checkSelection(this)" required>
+                <option selected disabled value="">SELECT FBS</option>
+                 <option value="1">YES</option>
+                <option value="0">NO</option>
+              </select>
+
+               <select class="form-control" name="exang" style="margin-bottom: 10px;" 
+              onchange="checkSelection(this)" required>
+                <option selected disabled value="">SELECT EXANG</option>
+                 <option value="1">YES</option>
+                <option value="0">NO</option>
+              </select>
+
+              <select class="form-control" name="slope" style="margin-bottom: 10px;" 
+              onchange="checkSelection(this)" required>
+                <option selected disabled value="">SELECT SLOPE</option>
+                <option value="0">UPSLOPING</option>
+                <option value="1">FLAT</option>
+                <option value="2">DOWNSLOPING</option>
+              </select>
+            </div>
+           
+            <input type="submit" name="login" class="butt" value="PREDICT">
+            
+            <br>
+          </form>
+          <br>
+                <strong>GENDER -&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  : 
+                  <i style="color: white;">{{ sex1 }}</i></strong>
+                <br>
+
+                <strong>FBS &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: 
+                  <i style="color: white;">{{ fbs1 }}</i></strong>
+
+                <br><strong>EXANG &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: 
+                  <i style="color: white;">{{ exang1 }}</i></strong>
+                
+                <br><strong>SLOPE &emsp;&emsp;&ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;: 
+                  <i style="color: white;">{{ slope1 }}</i></strong>
+                  <hr style="background-color:white;">
+                  <strong>Output &emsp;&emsp;&emsp;&emsp;: <i style="color: white;">{{prediction_text1}}</i></strong>
+
+
+        </div>        
+      </div>    
+      <div class="col-md-6">
+        <div class="myRightCtn">
+          <div class="box">
+            <header>Project Aim</header>
+            <p style="text-align:justify;margin-left: 5px;"><div>The main purpose of this project is to predict whether a person has heart disease of not?</div>
+              <div style="font-weight:bold">Input and output</div>
+              <div>Input: Person</div>
+              <div>Output: Prediction (Have Heart Disease / Does not have heart disease)</div>
+              <div style="font-weight:bold">Representation of Input (Passenger)</div>
+              <div>Input (Person) is represented as the following four input attributes:</div>
+              <div>Input Attributes 01– GENDER</div>
+              <div style="margin-left: 25px;">Possible Value 01 – Male</div>
+              <div style="margin-left: 25px;">Possible Value 02 – Female</div>
+              <div>Input Attributes 02– FBS</div>
+              <div style="margin-left: 25px;">Possible Value 01 – True</div>
+              <div style="margin-left: 25px;">Possible Value 02 – False</div>
+              <div>Input Attributes 03– Exang</div>
+              <div style="margin-left: 25px;">Possible Value 01 – yes</div>
+              <div style="margin-left: 25px;">Possible Value 02 – no</div>
+              <div>Input Attributes 04– Slope</div>
+              <div style="margin-left: 25px;">Possible Value 01 – Upsloping</div>
+              <div style="margin-left: 25px;">Possible Value 02 – Flat</div>
+              <div style="margin-left: 25px;">Possible Value 03 – Downsloping</div>
+              <div>Representation of Output</div>
+              <div>Output is Represented as a single Output Attributes</div>
+              <div>Output Attribute – Have Heart Disease</div>
+              <div>Possible Value 01 – Yes</div>
+              <div>Possible Value 02 – No</div>
+</p>
+          </div>
+        </div>
+        
+      </div>  
+    </div>
+  </div>  
+</div>
+<div class="container-fluid">
+  <div class="row" id="footer"">
+    <p class="center" style="margin-top:10px;text-align: center;">Copyright &copy; Fraz Sarwar-Heart Disease Prediction App</p>    
+  </div>
+</div>
+</body>
